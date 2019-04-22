@@ -1,0 +1,39 @@
+﻿@model IEnumerable<SkaikySolutions.ViewModels.EnrollmentDateGroup>
+
+@{
+    ViewBag.Title = "Employee Statistics";
+}
+
+<div style="margin-bottom:3%">
+    <h3 style="color:#0094ff">@ViewBag.Title</h3>
+
+</div>
+
+
+<div>
+    <table class="table">
+        <tr>
+            <th align="center">
+                Employees
+            </th>
+            <th>
+                Enrollment Date
+            </th>
+
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+
+                <td>
+                    @item.EmployeeCount
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.EnrollmentDate)
+                </td>
+            </tr>
+        }
+    </table>
+</div>
